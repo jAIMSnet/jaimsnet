@@ -1,0 +1,11 @@
+# Falco Helm Values
+# Docs: https://falco.org/docs/getting-started/third-party/install/kubernetes/helm/
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 3
+
+# TODO: Configure during Phase 3
+falco:
+  grpc:
+    enabled: true
+  grpcOutput:
+    enabled: true

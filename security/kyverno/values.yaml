@@ -1,0 +1,14 @@
+# Kyverno Helm Values
+# Docs: https://kyverno.io/docs/installation/methods/
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 3
+
+# TODO: Configure during Phase 3
+replicaCount: 1
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi

@@ -1,16 +1,24 @@
 # Secrets & credentials — never commit these
 .env
 .env.*
+!.env.example
 *.secret
-secrets.yaml
 *-secret.yaml
-*-secrets.yaml
-# Exception: InfisicalSecret CRD manifests in secrets/ are safe to commit
-!secrets/gateway-secrets.yaml
-!secrets/observability-secrets.yaml
+
+# Exception: InfisicalSecret CRD manifests are safe (reference paths, not values)
+!secrets/infisical/sync/*.yaml
+
+# Kubernetes credentials
 kubeconfig
 kubeconfig.*
 *.kubeconfig
+**/kube/config
+
+# Private keys, certificates
+*.pem
+*.key
+*.crt
+!*.crt.example
 
 # Infisical local config
 .infisical.json
@@ -20,13 +28,26 @@ charts/
 *.tgz
 .helm/
 
-# OpenTofu / Terraform state
+# OpenTofu / Terraform state — NEVER commit state files
 *.tfstate
 *.tfstate.*
+*.tfstate.backup
 .terraform/
 .terraform.lock.hcl
 .tofu/
 *.tfplan
+
+# Terraform variable files with actual values (but keep examples)
+*.tfvars
+!*.tfvars.example
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
 
 # Editor & OS
 .DS_Store
@@ -44,8 +65,3 @@ temp/
 *.log
 dist/
 build/
-
-# Python virtualenvs (scripts)
-.venv/
-__pycache__/
-*.pyc

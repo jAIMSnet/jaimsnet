@@ -1,0 +1,25 @@
+# ArgoCD Application — LiteLLM
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 3
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: litellm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jAIMSnet/jaimsnet
+    targetRevision: HEAD
+    path: gateway/litellm
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gateway
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

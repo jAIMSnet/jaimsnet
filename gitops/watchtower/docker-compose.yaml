@@ -1,0 +1,19 @@
+# Watchtower — Docker Container Auto-Updates
+# Runs on each Docker Droplet alongside app containers
+# Last Updated: 2026-03-06
+
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      # Check for updates every 5 minutes
+      - WATCHTOWER_POLL_INTERVAL=300
+      # Send notifications — TODO: configure webhook
+      # - WATCHTOWER_NOTIFICATION_URL=...
+      # Only update containers with this label
+      - WATCHTOWER_LABEL_ENABLE=true
+    command: --cleanup

@@ -1,0 +1,48 @@
+# LiteLLM Helm Values
+# Docs: https://github.com/BerriAI/litellm/tree/main/deploy/charts/litellm-helm
+# Last Updated: 2026-03-06
+# Status: TODO — fill in during Phase 1 deployment
+
+# TODO: Set image tag to latest stable
+image:
+  repository: ghcr.io/berriai/litellm
+  # tag: x.x.x
+
+# LiteLLM configuration — mounts the config.yaml as a ConfigMap
+litellm:
+  # config will be loaded from gateway/litellm/config.yaml
+  configmapName: litellm-config
+
+# Resources — sized for DOKS Premium AMD 2vCPU/8GiB node
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: 1000m
+    memory: 512Mi
+
+# Database — DigitalOcean Managed PostgreSQL
+# Credentials injected by Infisical operator via secrets/infisical/sync/litellm-secrets.yaml
+database:
+  # TODO: Set via Infisical-synced secret
+  url: ""
+
+# Disable built-in PostgreSQL (using DO Managed PG)
+postgresql:
+  enabled: false
+
+# Disable built-in Redis (using separate Redis chart)
+redis:
+  enabled: false
+
+# Service account
+serviceAccount:
+  create: true
+  name: litellm
+
+# Autoscaling — TODO: enable after Phase 1 baseline
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3

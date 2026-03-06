@@ -1,0 +1,26 @@
+# Loki Helm Values
+# Docs: https://github.com/grafana/loki/tree/main/production/helm/loki
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 2 — not yet deployed
+
+# TODO: Configure during Phase 2
+
+# Use single-binary mode for small cluster
+deploymentMode: SingleBinary
+
+singleBinary:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+# Local storage for Phase 2 (TODO: consider DO Spaces for Phase 3)
+loki:
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: filesystem

@@ -1,0 +1,15 @@
+# Ansible Inventory — Production
+# Last Updated: 2026-03-06
+# Status: TODO — Phase 3
+
+all:
+  children:
+    docker_droplets:
+      hosts:
+        # TODO: Add Droplet IPs when provisioned
+        # anythingllm:
+        #   ansible_host: x.x.x.x
+        #   ansible_user: root
+        # uptime_kuma:
+        #   ansible_host: x.x.x.x
+        #   ansible_user: root

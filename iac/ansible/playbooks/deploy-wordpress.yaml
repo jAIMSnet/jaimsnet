@@ -1,0 +1,11 @@
+# Ansible Playbook — Deploy WordPress
+# Last Updated: 2026-03-06
+# Status: TODO — Phase 3
+
+- name: Deploy WordPress
+  hosts: wordpress
+  become: true
+  tasks:
+    - name: TODO — Deploy WordPress Docker Compose
+      debug:
+        msg: "TODO: Deploy WordPress"

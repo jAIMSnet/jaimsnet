@@ -1,0 +1,26 @@
+# Prometheus Helm Values (kube-prometheus-stack)
+# Docs: https://github.com/prometheus-community/helm-charts
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 2 — not yet deployed
+
+# TODO: Configure during Phase 2
+
+# Prometheus retention
+prometheus:
+  prometheusSpec:
+    retention: 15d
+    resources:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+      limits:
+        cpu: 1000m
+        memory: 2Gi
+
+# Grafana is deployed separately
+grafana:
+  enabled: false
+
+# AlertManager — TODO: configure PagerDuty/Slack alerts
+alertmanager:
+  enabled: false  # TODO: enable in Phase 2

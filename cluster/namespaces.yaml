@@ -1,0 +1,37 @@
+# Kubernetes Namespace definitions for jAIMSnet
+# Last Updated: 2026-03-06
+# Status: ✅ Applied
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-nginx
+  labels:
+    app.kubernetes.io/part-of: jaimsnet
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+  labels:
+    app.kubernetes.io/part-of: jaimsnet
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gateway
+  labels:
+    app.kubernetes.io/part-of: jaimsnet
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: observability
+  labels:
+    app.kubernetes.io/part-of: jaimsnet
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infisical
+  labels:
+    app.kubernetes.io/part-of: jaimsnet

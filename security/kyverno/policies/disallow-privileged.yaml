@@ -1,0 +1,28 @@
+# Kyverno Policy — Disallow Privileged Containers
+# Last Updated: 2026-03-06
+# Status: ⬜ Phase 3 — TODO: configure and test
+
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: disallow-privileged
+  annotations:
+    policies.kyverno.io/description: >-
+      Disallow privileged containers.
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: disallow-privileged-containers
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Privileged containers are not allowed"
+        pattern:
+          spec:
+            containers:
+              - =(securityContext):
+                  =(privileged): "false"
