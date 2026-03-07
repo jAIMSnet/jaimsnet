@@ -1,6 +1,5 @@
 # Environment & secrets — never commit
 *.env
-.env.*
 !.env.example
 /secrets/**/*.env
 /secrets/**/*.json
@@ -47,7 +46,6 @@ node_modules/
 Thumbs.db
 *.log
 .idea/
-.vscode/
 !.vscode/settings.json
 
 # Ansible
@@ -74,3 +72,4 @@ temp/
 *.swp
 *.swo
 *~
+config.bat
