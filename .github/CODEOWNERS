@@ -1,0 +1,16 @@
+# Default owners for everything
+* @jAIMSnet/platform-team
+
+# Infrastructure
+/iac/ @jAIMSnet/platform-team
+/cluster/ @jAIMSnet/platform-team
+
+# Security
+/security/ @jAIMSnet/security-team
+/compliance/ @jAIMSnet/security-team
+
+# Observability
+/observability/ @jAIMSnet/platform-team
+
+# Gateway
+/gateway/ @jAIMSnet/platform-team

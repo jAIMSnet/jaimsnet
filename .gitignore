@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+vendor/
+.venv/
+__pycache__/
+
+# Terraform / OpenTofu
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!*.tfvars.example
+
+# Ansible
+*.retry
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+*.key
+*.env
+!*.env.example
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Helm
+charts/*.tgz
+
+# Test outputs
+coverage/
+test-results/
