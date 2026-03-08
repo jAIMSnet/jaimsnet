@@ -3,9 +3,9 @@
 | Field | Value |
 |---|---|
 | **Phase** | Phase 1 🔴 |
-| **Status** | 🔄 In Progress |
+| **Status** | 🟢 Active / Operational |
 | **Owner** | @SHD |
-| **Last Updated** | 2025-01-01 |
+| **Last Updated** | 2026-03-06 |
 
 Uptime Kuma provides external uptime monitoring and public status page for jAIMSnet services. It runs on a dedicated Docker Droplet (not in the DOKS cluster) to ensure independence from the monitored infrastructure.
 
@@ -18,6 +18,11 @@ Uptime Kuma provides external uptime monitoring and public status page for jAIMS
 | Domain | `kuma.jAIMS.app` |
 | TLS | Caddy reverse proxy (automatic HTTPS) |
 | Data persistence | Docker volume |
+
+    ### Quick Start
+        1. SSH into the NYC1 monitoring droplet.
+        2. Navigate to the deployment directory.
+        3. Run `docker-compose up -d`.
 
 ## Monitored Endpoints
 
