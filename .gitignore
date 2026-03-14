@@ -67,6 +67,10 @@ charts/
 *.tgz
 .helm/
 
+
+## weown-cli
+**/*.pyc
+
 # Temporary
 tmp/
 temp/
